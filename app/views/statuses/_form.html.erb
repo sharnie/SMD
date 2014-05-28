@@ -1,0 +1,61 @@
+<%= content_tag :div, class: "row" do %>
+  <%= content_tag :div, id: "responsive", class: "col-sm-offset-3 col-sm-6" do %>
+
+<div class="panel panel-default">
+<div class="panel-body">
+
+<%= form_for @status, class: "status_form mbm", html: { multipart: true } do |f| %>
+  <% if @status.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@status.errors.count, "error") %> prohibited this status from being saved:</h2>
+
+      <ul>
+      <% @status.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :title  %>
+    <%= f.text_field :title, class: "form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <label>Select category</label>
+    <select class="form-control">
+      <option>--Category--</option>
+      <option>Mustard</option>
+      <option>Ketchup</option>
+      <option>Barbecue</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :text, "Description" %>
+    <%= f.text_area :text, class: "form-control", rows: 2 %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="form-group">
+    <label>Instructions to the buyer</label>
+    <textarea class="form-control"></textarea>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary pull-right mts font-light" %>
+  </div>
+<% end %>
+
+</div>
+</div>
+
+  <% end %>
+<% end %>

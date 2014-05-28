@@ -1,0 +1,51 @@
+<div class="offer-list">
+  <% @statuses.each do |status| %>
+    <%= link_to status do%>
+
+      <div id="offer_<%= dom_id(status) %>" class="offer">
+        <div class="col-xs-9 col-sm-5 col-md-5">
+          <span class="clear pull-left thumb-sm avatar ">
+            <%= image_tag avatar(status.user), class: "img-rounded" %>
+          </span>
+          <span class="clear">
+            <span class="bold title">
+              <%= status.title %>
+            </span>
+            <span class="text-muted">
+              for free
+            </span>
+          </span>
+        </div>
+
+        <div class="col-xs-3 col-sm-2 col-md-3">
+          <span class="followers text-ellipsis">
+            <i class="fa fa-users"></i>
+            120,000
+          </span>
+        </div>
+
+        <div class="col-xs-3 col-sm-2 col-md-2 ">
+          <span class="rating">
+            <span class="up">
+              <i class="fa fa-thumbs-up"></i>
+              200
+            </span>
+
+            <span class="down">
+              <i class="fa fa-thumbs-down"></i>
+              2
+            </span>
+          </span>
+        </div>
+
+        <div class="col-sm-3 col-md-2 hidden-xs">
+          <span class="location text-ellipsis">
+            <i class="fa fa-location-arrow hidden-xs"></i>
+            Brooklyn, NY
+          </span>
+        </div>
+      </div>
+
+    <% end %>
+  <% end %>
+</div>

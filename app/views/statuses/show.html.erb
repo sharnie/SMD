@@ -1,0 +1,20 @@
+<div class="row">
+
+  <div id="responsive" class="col-md-offset-1 col-sm-12 col-md-10 no-padding">
+    <div id="discover" class="panel panel-default">
+      <div class="panel-body">
+
+      	<a href="#" class="pull-left thumb-md">
+      		<%= image_tag @status.user.avatar.url, class: "img-rounded" %>
+      	</a>
+      	<span class="bold"><%= @status.text %></span>
+
+      </div><!-- /. PANEL-BODY -->
+    </div><!-- /# DISCOVER -->
+  </div>
+
+</div>
+<!-- 
+<%= link_to 'Edit', edit_status_path(@status) %> |
+<%= link_to 'Back', statuses_path %>
+ -->

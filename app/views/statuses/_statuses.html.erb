@@ -1,0 +1,26 @@
+<% @statuses.each do |status| %>
+    <%= content_tag :div, class: "media" do %>
+
+      <%= link_to status, class: "thumb-sm pull-left" do %>
+        <%= image_tag avatar(status.user.id, 200), class: "media-object img-circle" %>
+      <% end %>
+
+      <%= content_tag :div, class: "media-body" do %>
+        <%= link_to status do %>
+          <%= content_tag :span, full_name(status.user_id), class: "username black bold" %>
+          <%= content_tag :span, "@digaza" %>
+
+          <%= content_tag :p, status.text, class: "text" %>
+        <% end %>
+
+        
+        
+        <!-- Activate when ImageMagic is installed
+        <div class="attachment">
+          <img src="images/user.jpg" alt=".." />
+        </div> -->
+
+      <% end %><!-- /. MEDIA BODY -->
+
+    <% end %><!-- /. MEDIA -->
+<% end %>
